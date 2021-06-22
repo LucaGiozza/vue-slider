@@ -13,37 +13,45 @@
 <body>
 
     <!-- creo un div container -->
+    <h1 class="hp">Ecco i personaggi di Harry Potter</h1>
+    <p class="sottotitolo">Scegli il tuo preferito(Ermione ti amo)</p>
     <div id="app" class="container">
 
         
 
         
         <div class="box-oggetti">
+           
 
             <!-- freccia di sinistra -->
             
-            <div class="start ">
+            <div class="start " @click ="startPhoto">
                 <i class="fas fa-chevron-left"></i>
             </div>
 
            <!-- qui immagini -->
 
             <div class="image">
-                <img :src="" alt="foto">
+                <img :src="photos[incremento]" alt="foto">
             </div>
 
             <!-- fine immagini -->
 
             <!-- freccia di destra -->
-            <div class="end">
+            <div class="end" @click ="endPhoto">
                 <i class="fas fa-chevron-right"></i>
             </div>
 
-
+    <!-- inserisco la nav -->
+    <div class="nav">
+                 
+        <i :class="(index == incremento) ? 'active' : '' "class="fas fa-circle" v-for="(item, index) in photos" @click="cambiaPhoto(index)" ></i>
+     </div>
+    <!-- end nav -->
 
         </div>
       
-    </>
+    </div>
 
 
   <!-- qui inserisco lo script -->
