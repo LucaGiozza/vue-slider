@@ -15,7 +15,7 @@ const app = new Vue(
           'img/iton.jpg',
           'img/dobby.jpg',
           'img/sile.jpg',
-          'img/vold.jpg.crdownload',
+          'img/vold.jpg',
           'img/hag.jpg',
           'img/malfoy.jpg',
 
@@ -58,3 +58,7 @@ const app = new Vue(
   
   
   );
+
+
+
+//   Applicare l'autoplay allo slider: ogni 3 secondi, cambia immagine automaticamente.
