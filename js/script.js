@@ -20,7 +20,26 @@ const app = new Vue(
           'img/malfoy.jpg',
 
 
-      ]
+      ],
+
+      intervallo: ''
+    },
+       // aggiunta set interval
+       mounted(){
+        this.intervallo = setInterval(this.endPhoto, 3000);
+
+        document.addEventListener("keydown", (element) => {
+            console.log(element.key);
+            if(element.key == 'ArrowRight'){
+                this.endPhoto();
+            }else if(element.key == 'ArrowLeft'){
+                this.startPhoto();
+            }
+
+
+
+        } );
+
     },
   
     
@@ -35,7 +54,7 @@ const app = new Vue(
   
         startPhoto(){
              if(this.incremento == 0){
-          this.incremento = this.photos.length - 1 ;
+                   this.incremento = this.photos.length - 1 ;
       
   
              }else{
@@ -45,14 +64,12 @@ const app = new Vue(
         },
         cambiaPhoto(indice){
             this.incremento = indice;
+            
         }
   
     },
 
-    // aggiunta set interval
-    mounted(){
-        setInterval(this.endPhoto, 3000);
-    }
+ 
   
     }
   
