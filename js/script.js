@@ -47,6 +47,11 @@ const app = new Vue(
             this.incremento = indice;
         }
   
+    },
+
+    // aggiunta set interval
+    mounted(){
+        setInterval(this.endPhoto, 3000);
     }
   
     }
@@ -61,4 +66,3 @@ const app = new Vue(
 
 
 
-//   Applicare l'autoplay allo slider: ogni 3 secondi, cambia immagine automaticamente.
